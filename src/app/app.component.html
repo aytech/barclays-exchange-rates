@@ -1,0 +1,60 @@
+<div class="container">
+  <h1 class="heading">Exchange Rates</h1>
+  <div class="content">
+    <div class="form">
+      <form>
+        <div class="form-element">
+          <label for="base">Base</label>
+          <select id="base" name="currency" [ngModel]="data.currency" (ngModelChange)="updateBase($event)">
+            <option [value]="currency" *ngFor="let currency of currencies">
+              {{ currency }}
+            </option>
+          </select>
+        </div>
+        <div class="form-element">
+          <label for="date">Date</label>
+          <input
+            id="date"
+            type="date" name="date"
+            [ngModel]="data.date | date:'yyyy-MM-dd'"
+            (ngModelChange)="updateDate($event)">
+        </div>
+        <div class="form-element text-right">
+          <button type="button" (click)="display()">Display</button>
+        </div>
+      </form>
+    </div>
+    <div class="rates">
+      <img src="../assets/loading.gif" alt="Loading..." *ngIf="loading">
+      <table>
+        <thead>
+        <tr>
+          <th class="clickable" (click)="sort()">
+            Currency
+            <i class="caret">
+              <svg id="icon-dropdown" viewBox="-4 -6 30 30" width="18px" height="18px"
+                   [ngClass]="{'inverted': sortOrder === 'asc'}">
+                <path d="M0,4l9,10.8L18,4H0"></path>
+              </svg>
+            </i>
+          </th>
+          <th>Buy</th>
+          <th>Sell</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngIf="rates.length === 0" class="empty-row">
+          <td>no value</td>
+          <td>no value</td>
+          <td>no value</td>
+        </tr>
+        <tr *ngFor="let rate of rates" [ngClass]="{ 'base': isBase(rate.base) }">
+          <th >{{ rate.base }}</th>
+          <th>{{ rate.buy }}</th>
+          <th>{{ rate.sell }}</th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

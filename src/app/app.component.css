@@ -1,0 +1,115 @@
+.container {
+  display: block;
+  text-align: center;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.caret {
+  vertical-align: sub;
+}
+
+.caret svg.inverted {
+  transform: rotate(180deg);
+}
+
+.container > h1 {
+  margin: 60px auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.form {
+  text-align: left;
+}
+
+.form label {
+  margin-right: 10px;
+}
+
+.form .form-element {
+  margin: 15px;
+}
+
+.form select, .form input, .form button {
+  box-sizing: border-box;
+  width: 10rem;
+  padding: 5px;
+}
+
+.rates {
+  position: relative;
+}
+
+.rates > img {
+  position: absolute;
+  left: 50%;
+  margin-left: -32px;
+  top: 48px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+table {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+thead th {
+  color: #000;
+  background-color: #bebebe;
+  padding: .75rem;
+}
+
+tr {
+  user-select: none;
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+tr.base {
+  color: red;
+}
+
+tr.empty-row {
+  background-color: #ffffff !important;
+  height: 65px;
+}
+
+td, th {
+  padding: .75rem;
+  border-top: 1px solid #dee2e6;
+  border-right: 1px solid #000;
+  vertical-align: middle;
+}
+
+th.clickable {
+  cursor: pointer;
+}
