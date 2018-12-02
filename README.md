@@ -3,7 +3,8 @@
 1. Clone repository
 2. Install node.js from https://nodejs.org
 3. Run `npm install` from the project directory
-4. Run `ng serve --open` from the project directory 
+4. Install Angular CLI `npm install -g @angular/cli`
+5. Run `ng serve --open` from the project directory 
 
 _Notes:_
 1. See `Front end developer.docx` for test instructions;
